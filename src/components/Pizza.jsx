@@ -1,6 +1,7 @@
 import React from 'react'
 import { Col, Container, Row } from 'reactstrap'
 import pizza from '../assets/images/pizza.png'
+import { Link } from 'react-router-dom'
 
 const Pizza = () => {
   return (
@@ -99,7 +100,9 @@ const Pizza = () => {
                                     <span>1</span> 
                                     <i class="ri-add-fill plus"></i>
                                     </span>
-                                    <button className='btn btn-order'>Order Now</button>
+                                    <Link to='/product-details'>
+                                        <button className='btn btn-order'>Order Now</button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -115,7 +118,9 @@ const Pizza = () => {
                                     <span>1</span> 
                                     <i class="ri-add-fill plus"></i>
                                     </span>
-                                    <button className='btn btn-order'>Order Now</button>
+                                    <Link to='/product-details'>
+                                        <button className='btn btn-order'>Order Now</button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -131,7 +136,9 @@ const Pizza = () => {
                                     <span>1</span> 
                                     <i class="ri-add-fill plus"></i>
                                     </span>
-                                    <button className='btn btn-order'>Order Now</button>
+                                    <Link to='/product-details'>
+                                        <button className='btn btn-order'>Order Now</button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -147,7 +154,9 @@ const Pizza = () => {
                                     <span>1</span> 
                                     <i class="ri-add-fill plus"></i>
                                     </span>
-                                    <button className='btn btn-order'>Order Now</button>
+                                    <Link to='/product-details'>
+                                        <button className='btn btn-order'>Order Now</button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -163,7 +172,9 @@ const Pizza = () => {
                                     <span>1</span> 
                                     <i class="ri-add-fill plus"></i>
                                     </span>
-                                    <button className='btn btn-order'>Order Now</button>
+                                    <Link to='/product-details'>
+                                        <button className='btn btn-order'>Order Now</button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
