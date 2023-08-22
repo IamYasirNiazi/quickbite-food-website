@@ -2,14 +2,24 @@ import React, { useRef, useState } from 'react'
 import {Container, Row, Col} from 'reactstrap'
 import logo from '../assets/images/logo.png'
 // import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { cartUiActions } from '../store/cartSlice/cartUiSlice'
 
 const Header = () => {
 
-    const [signUpData, setSignUpData] = useState({fname:'', lname:'', email:'', password:''})
-    const [signInData, setSignInData] = useState({email:'', password:''})
-    const [currentUser, setCurrentUser] = useState({id: '', email: ''})
-    const refCloseSignup = useRef(null)
-    const refCloseLogin = useRef(null)
+    const totalQuantity = useSelector(state=>state.cart.totalQuantity);
+
+    const dispatch = useDispatch()
+    const toggleCart = ()=>{
+      dispatch(cartUiActions.toggle());
+    }
+  
+  
+    const [signUpData, setSignUpData] = useState({fname:'', lname:'', email:'', password:''});
+    const [signInData, setSignInData] = useState({email:'', password:''});
+    const [currentUser, setCurrentUser] = useState({id: '', email: ''});
+    const refCloseSignup = useRef(null);
+    const refCloseLogin = useRef(null);
     
     const OnChangeFunc = (event)=>{
         setSignUpData({...signUpData, [event.target.name] : event.target.value})
@@ -160,7 +170,10 @@ const Header = () => {
                         <div>
                             {currentUser.email && <h6>Hi, {(currentUser.email).charAt(0).toUpperCase() + (currentUser.email).slice(1).toLowerCase()}</h6>}
                             {/* <i className="ri-search-line search"></i> */}
-                            <i className="ri-shopping-bag-line cart"></i>
+                            <div>
+                              <i className="ri-shopping-bag-line cart" onClick={toggleCart}></i>
+                              <span className='notify'>{totalQuantity}</span>
+                            </div>
                             {!currentUser.email && <button className='btn' data-bs-toggle="modal" data-bs-target="#exampleModalSignIn">Log In</button>}   
                             {currentUser.email && <button className='btn' onClick={logoutFunc}>Log Out</button>}   
                         </div>

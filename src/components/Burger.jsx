@@ -1,8 +1,12 @@
 import React from 'react'
 import { Col, Container, Row } from 'reactstrap'
-import burger from '../assets/images/pizza.png'
+// import burger from '../assets/images/pizza.png'
+import products from '../assets/data/products'
+import ProductCard from './ProductCard'
+
 
 const Burger = () => {
+
   return (
     <>
         <section className='burger'>
@@ -87,8 +91,15 @@ const Burger = () => {
                 </Row> */}
                  <Row className='burger__container__row'>
                     <Col className='burger__container__row__col col col-md-12 col-lg-12 owl-carousel owl-theme' id='burger'>
+
+                        {
+                            products.map((item, index)=>{
+                                return <ProductCard item={item} key={index} />
+                            })
+
+                        }
                             
-                        <div className="burger__container__row__col__product">
+                        {/* <div className="burger__container__row__col__product">
                             <img src={burger} alt="burger" className='img-fluid' />
                             <div className='content'>
                                 <h5>Pepperoni burger</h5>
@@ -167,7 +178,7 @@ const Burger = () => {
                                     <button className='btn btn-order'>Order Now</button>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                         
                     </Col>
                   

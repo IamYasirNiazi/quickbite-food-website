@@ -1,7 +1,9 @@
 import React from 'react'
 import { Col, Container, Row } from 'reactstrap'
-import pizza from '../assets/images/pizza.png'
-import { Link } from 'react-router-dom'
+// import pizza from '../assets/images/pizza.png'
+// import { Link } from 'react-router-dom'
+import products from '../assets/data/products'
+import ProductCard from './ProductCard'
 
 const Pizza = () => {
   return (
@@ -88,7 +90,15 @@ const Pizza = () => {
                 </Row> */}
                  <Row className='pizza__container__row'>
                     <Col className='pizza__container__row__col col col-md-12 col-lg-12 owl-carousel owl-theme' id='pizza'>
-                        <div className="pizza__container__row__col__product">
+
+                    {
+                            products.map((item, index)=>{
+                                return <ProductCard item={item} key={index} />
+                            })
+
+                        }
+
+                        {/* <div className="pizza__container__row__col__product">
                             <img src={pizza} alt="Pizza" className='img-fluid' />
                             <div className='content'>
                                 <h5>Pepperoni Pizza</h5>
@@ -177,7 +187,7 @@ const Pizza = () => {
                                     </Link>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </Col>
                   
                 </Row>

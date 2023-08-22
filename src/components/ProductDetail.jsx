@@ -1,34 +1,37 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Col, Container, Row } from "reactstrap";
 import Pizza from "../assets/images/pizza.png";
 
 const ProductDetail = () => {
 
-  // const thumbnails = document.querySelectorAll(".thumbnails img");
-  // const mainImage = document.getElementById("main-image");
+  useEffect(() => {
+    const thumbnails = document.querySelectorAll(".thumbnails img");
+    const mainImage = document.getElementById("main-image");
 
-  // let index = 0;
-  // thumbnails.forEach((thumbnail) => {
-  //   thumbnail.addEventListener("click", () => {
-  //     index = thumbnail.getAttribute("data-index");
-  //     const imagePath = `/src/assets/images/${index}.png`;
-  //     mainImage.src = imagePath;
-  //   });
-  // });
+    let index = 0;
+    thumbnails.forEach((thumbnail) => {
+      thumbnail.addEventListener("click", () => {
+        index = thumbnail.getAttribute("data-index");
+        const imagePath = `/src/assets/images/${index}.png`;
+        mainImage.src = imagePath;
+      });
+    });
 
-  // const leftArrow = document.querySelector(".left-arrow");
-  // const rightArrow = document.querySelector(".right-arrow");
-  // let currentIndex = index;
+    const leftArrow = document.querySelector(".left-arrow");
+    const rightArrow = document.querySelector(".right-arrow");
+    let currentIndex = index;
 
-  // leftArrow.addEventListener("click", () => navigateImage(-1));
-  // rightArrow.addEventListener("click", () => navigateImage(1));
+    leftArrow.addEventListener("click", () => navigateImage(-1));
+    rightArrow.addEventListener("click", () => navigateImage(1));
 
-  // function navigateImage(offset) {
-  //   currentIndex =
-  //     (currentIndex + offset + thumbnails.length) % thumbnails.length;
-  //   const imagePath = `/src/assets/images/${currentIndex}.png`;
-  //   mainImage.src = imagePath;
-  // }
+    function navigateImage(offset) {
+      currentIndex =
+        (currentIndex + offset + thumbnails.length) % thumbnails.length;
+      const imagePath = `/src/assets/images/${currentIndex}.png`;
+      mainImage.src = imagePath;
+    }
+  }, []);
+  
 
   return (
     <>
@@ -44,13 +47,13 @@ const ProductDetail = () => {
                 <div className="image-library">
                   <div className="main-image">
                     <div className="nav-arrow left-arrow">&lt;</div>
-                    <img id="main-image" src={Pizza} alt="Main Image" />
+                    <img id="main-image" src={Pizza} alt="" />
                     <div className="nav-arrow right-arrow">&gt;</div>
                   </div>
                   <div className="thumbnails">
-                    <img src={Pizza} alt="Image 1" data-index="0" />
-                    <img src={Pizza} alt="Image 2" data-index="1" />
-                    <img src={Pizza} alt="Image 3" data-index="2" />
+                    <img src={Pizza} alt="file1" data-index="0" />
+                    <img src={Pizza} alt="file2" data-index="1" />
+                    <img src={Pizza} alt="file3" data-index="2" />
                   </div>
                 </div>
               </div>
@@ -144,11 +147,7 @@ const ProductDetail = () => {
               <div className="main">
                 <div className="product-wrapper">
                   <div className="product">
-                    <img
-                      src={Pizza}
-                      className="img-fluid"
-                      alt=""
-                    />
+                    <img src={Pizza} className="img-fluid" alt="" />
                     <div className="content">
                       <h5>Pizza 1</h5>
                       <h4>2000/RS</h4>
@@ -157,11 +156,7 @@ const ProductDetail = () => {
                   </div>
 
                   <div className="product">
-                    <img
-                      src={Pizza}
-                      className="img-fluid"
-                      alt=""
-                    />
+                    <img src={Pizza} className="img-fluid" alt="" />
                     <div className="content">
                       <h5>Pizza 2</h5>
                       <h4>2000/RS</h4>
@@ -170,11 +165,7 @@ const ProductDetail = () => {
                   </div>
 
                   <div className="product">
-                    <img
-                      src={Pizza}
-                      className="img-fluid"
-                      alt=""
-                    />
+                    <img src={Pizza} className="img-fluid" alt="" />
                     <div className="content">
                       <h5>Pizza 3</h5>
                       <h4>2000/RS</h4>
@@ -183,11 +174,7 @@ const ProductDetail = () => {
                   </div>
 
                   <div className="product">
-                    <img
-                      src={Pizza}
-                      className="img-fluid"
-                      alt=""
-                    />
+                    <img src={Pizza} className="img-fluid" alt="" />
                     <div className="content">
                       <h5>Pizza 4</h5>
                       <h4>2000/RS</h4>

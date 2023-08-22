@@ -10,11 +10,21 @@ import Burger from '../components/Burger'
 import Drink from '../components/Drink'
 // import SaleBanner from '../components/SaleBanner'
 import Contact from '../components/Contact'
+import Carts from '../components/Carts'
+import { useSelector } from 'react-redux'
+
+
 
 const Home = () => {
+
+  const isVisible = useSelector((state)=> state.cartUi.cartIsVisible)
+
   return (
     <>
         <Hero />
+        {
+          isVisible && <Carts />
+        }
         {/* <Services /> */}
         <Menu />
         <Pizza />
